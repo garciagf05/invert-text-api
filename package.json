@@ -1,0 +1,21 @@
+{
+  "name": "reverse-text-api",
+  "version": "0.0.1",
+  "description": "Demostration API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "api",
+    "text",
+    "reverse",
+    "palindrome"
+  ],
+  "author": "Fabián García",
+  "license": "ISC",
+  "devDependencies": {
+    "standard": "^16.0.3"
+  }
+}
