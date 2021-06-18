@@ -1,9 +1,10 @@
-const ExpressServer = require('./server')
+const AppServer = require('./src/server')
+const constants = require('./src/constants')
+const api = require('./src/api')
 
-const server = ExpressServer.setInitialConfig(3000)
+const { env: { port: appPort } } = { ...constants }
+const server = AppServer.getInstance(appPort)
 
-server.app.get('/', function (_req, res) {
-  res.send('Test Successful')
-})
+server.app.use(api)
 
-server.start(() => console.log(`Server listening in port ${3000}`))
+server.start(() => console.log(`Server listening in port ${appPort}`))

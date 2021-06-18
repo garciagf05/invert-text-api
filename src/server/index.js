@@ -7,7 +7,7 @@ class ExpressServer {
     this.port = port
   }
 
-  static setInitialConfig (port = 3000) {
+  static getInstance (port = 3000) {
     return new ExpressServer(port)
   }
 
@@ -27,6 +27,10 @@ class ExpressServer {
     }
 
     return options
+  }
+
+  static getRouter () {
+    return express.Router()
   }
 
   start (callback = () => { }) {
