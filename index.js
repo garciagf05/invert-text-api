@@ -8,3 +8,5 @@ const server = AppServer.getInstance(appPort)
 server.app.use(api)
 
 server.start(() => console.log(`Server listening in port ${appPort}`))
+
+module.exports = server.app
