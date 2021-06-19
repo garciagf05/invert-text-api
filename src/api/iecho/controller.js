@@ -1,11 +1,13 @@
 const Server = require('./../../server')
-const Constants = require('./../../constants')
+const iechoService = require('./service')
+const constants = require('./../../constants')
 const router = Server.getRouter()
-const path = `${Constants.apiPaths.basePath}${Constants.apiPaths.reverseTextPath}`
+const path = `${constants.apiPaths.basePath}${constants.apiPaths.reverseTextPath}`
 
-router.get(path, (req, res) => {
+router.get(path, async (req, res) => {
   const { query: { text = '' } } = { ...req }
-  res.status(200).send(`Test Successfuly, text: ${text}`)
+  const result = await iechoService(text)
+  res.status(result.status).send(result.response)
 })
 
 module.exports = router

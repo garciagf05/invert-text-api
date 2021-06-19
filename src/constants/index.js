@@ -5,5 +5,8 @@ module.exports = {
   apiPaths: {
     basePath: '/api',
     reverseTextPath: '/iecho'
+  },
+  errors: {
+    noTextReceived: 'No text error'
   }
 }
