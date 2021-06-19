@@ -1,4 +1,4 @@
-# App de inversión de texto _v0.0.1_
+# App para invertir texto _v0.0.1_
 
 Reverse Text App es una aplicación que toma un texto dado y lo invierte, así mismo, también es capaz de determinar si dicho texto es palindromo o no.
 
