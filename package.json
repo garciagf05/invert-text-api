@@ -1,5 +1,5 @@
 {
-  "name": "reverse-text-api",
+  "name": "inverse-text-api",
   "version": "0.0.1",
   "description": "Demostration API",
   "main": "index.js",
