@@ -1,6 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-
+const path = require('path')
 class ExpressServer {
   constructor (port = 3000) {
     this.app = express()
@@ -29,6 +29,11 @@ class ExpressServer {
     return options
   }
 
+  _publicFolder () {
+    const PUBLIC_PATH = path.resolve(__dirname, './../../public')
+    this.app.use(express.static(PUBLIC_PATH))
+  }
+
   static getRouter () {
     return express.Router()
   }
@@ -37,6 +42,7 @@ class ExpressServer {
     const CORS_OPTIONS = this._getCorsOptions()
     this.app.listen(this.port, callback)
     this.app.use(cors(CORS_OPTIONS))
+    this._publicFolder()
   }
 }
 
