@@ -33,16 +33,10 @@ class ExpressServer {
     return express.Router()
   }
 
-  allowOriginAccesControl (_req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*')
-    next()
-  }
-
   start (callback = () => { }) {
     const CORS_OPTIONS = this._getCorsOptions()
     this.app.listen(this.port, callback)
     this.app.use(cors(CORS_OPTIONS))
-    this.app.use(this.allowOriginAccesControl)
   }
 }
 
