@@ -1,6 +1,8 @@
+const environment = process.env
+
 module.exports = {
   env: {
-    port: 3000
+    port: environment.port || 3000
   },
   apiPaths: {
     basePath: '/api',
