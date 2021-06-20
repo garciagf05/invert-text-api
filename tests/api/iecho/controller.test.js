@@ -39,13 +39,13 @@ describe(`GET ${reverseTextPath}`, function () {
     const queryParams = ''
     const response = await request.get(`${apiBasePath}${queryParams}`)
     expect(response.status).to.eql(400)
-    expect(response.body).to.eql({ error: 'No text error' }) 
+    expect(response.body).to.eql({ error: 'No text error' })
   })
 
   it('Should fail with status 400 in case of only receive spaced text', async function () {
     const queryParams = '  '
     const response = await request.get(`${apiBasePath}${queryParams}`)
     expect(response.status).to.eql(400)
-    expect(response.body).to.eql({ error: 'No text error' }) 
+    expect(response.body).to.eql({ error: 'No text error' })
   })
 })
